@@ -8,6 +8,6 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-HELLO WORLD
+
 </body>
 </html>
