@@ -25,7 +25,7 @@ Per JavaScript wird dann entschieden was angezeigt wird.-->
                 <div class="row justify-content-center">
                     <div class="form-group col-md-4 mt-2">
                         <label for="description">Beschreibung:<b class="red-star">*</b></label>
-                        <input type="text" class="form-control border" id="description" placeholder="Beschreibung" required />
+                        <textarea type="text" class="form-control border" id="description" placeholder="Beschreibung" required></textarea>
                         <div class="invalid-feedback">Invalid!</div>
                     </div>
                 </div>
@@ -46,6 +46,20 @@ Per JavaScript wird dann entschieden was angezeigt wird.-->
                             <option value="3">3 - Normal</option>
                             <option value="4">4 - Wichtig</option>
                             <option value="5">5 - Sehr wichtig</option>
+                        </select>
+                        <div class="invalid-feedback">Invalid!</div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="form-group col-md-4 mt-2">
+                        <label for="danger">Gefahrenstufe:<b class="red-star">*</b></label>
+                        <select class="form-select" id="danger" required>
+                            <option selected value="" hidden>Bitte auswählen</option>
+                            <option value="1">1 - Ungefährlich</option>
+                            <option value="2">2 - Nicht so Gefährlich</option>
+                            <option value="3">3 - Moderat</option>
+                            <option value="4">4 - Gefährlich</option>
+                            <option value="5">5 - Sehr gefährlich</option>
                         </select>
                         <div class="invalid-feedback">Invalid!</div>
                     </div>

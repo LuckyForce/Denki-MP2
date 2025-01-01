@@ -7,14 +7,15 @@ async function submit() {
   console.log("Submit button clicked");
 
   submitRequest({
+    //TODO: Correct inputs
     title: document.getElementById("title").value,
-    date: document.getElementById("date").value,
-    entry: document.getElementById("entry").value,
+    // date: document.getElementById("date").value,
+    // entry: document.getElementById("entry").value,
   });
 }
 
 async function submitRequest(params) {
-  fetch(site + "/api/entry", {
+  fetch(site + "api/entry.php", {
     body: JSON.stringify(params),
     method: "POST",
     headers: { "Content-Type": "application/json" },
