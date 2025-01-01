@@ -23,7 +23,3 @@ $email = "info@adrian-schauer.at";
         </div>
     </div>
 </div>
-
-</body>
-
-</html>

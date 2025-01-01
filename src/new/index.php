@@ -1,5 +1,5 @@
 <?php
-require "path.php";
+require "../path.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +20,11 @@ require "path.php";
 </head>
 
 <body>
-    <?php include 'header.php'; ?>
+    <?php include '../header.php'; ?>
 
     <?php include 'content.php'; ?>
 
-    <?php include 'footer.php'; ?>
+    <?php include '../footer.php'; ?>
 </body>
 
 </html>
