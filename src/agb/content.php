@@ -4,7 +4,7 @@
     </div>
 
     <div class="container mt-3 p-5 text-main">
-        <p>This is a website made for a TU Wien Project. There is no intention of using this site outsite of the designated classroom.</p>
+        <p>Dies ist eine Website, die für ein Projekt der TU Wien erstellt wurde. Es ist nicht beabsichtigt, diese Website außerhalb des Unterrichts zu verwenden.</p>
     </div>
 
     <div class="container mt-3 p-5 text-main">

@@ -61,11 +61,11 @@ async function getAllEntries() {
           entryDiv.innerHTML = `
               <div class="entry-card">
                 <h2>${entry.title}</h2>
-                <p><strong>Description:</strong> ${entry.description}</p>
-                <p><strong>Place:</strong> ${entry.place}</p>
-                <p><strong>Priority:</strong> ${entry.priority}</p>
-                <p><strong>Danger Level:</strong> ${entry.danger}</p>
-                <p><strong>Picture:</strong> <img src="${site}api/uploads?pic=${
+                <p><strong>Beschreibung:</strong> ${entry.description}</p>
+                <p><strong>Standort:</strong> ${entry.place}</p>
+                <p><strong>Priorität:</strong> ${entry.priority}</p>
+                <p><strong>Gefahrenstufe:</strong> ${entry.danger}</p>
+                <p><strong>Bild:</strong> <img src="${site}api/uploads?pic=${
             entry.picture
           }" alt="${
             entry.title
