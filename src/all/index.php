@@ -14,6 +14,7 @@ require "../path.php";
     <script src="<?= $path_jquery_js ?>"></script>
     <script src="<?= $path_bootstrap_js ?>"></script>
     <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/allEntries.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>

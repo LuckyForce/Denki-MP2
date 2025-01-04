@@ -1,7 +1,20 @@
 <!--DONE: Frontend Riddle Explore Pane Filter and Cards
 NOTE: This Panes von den einzelenn riddles werden im nachhinein reingeladen per JavaScript.
 Hier muss nur das Frontend drum herum gemacht werden-->
+<style>
+    .entry-card {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
 
+    .entry-card img {
+        display: block;
+        margin-top: 10px;
+    }
+</style>
 
 <div class="bg-dark-purple">
 
@@ -55,7 +68,7 @@ Hier muss nur das Frontend drum herum gemacht werden-->
     </div>
 
     <div class="p-1">
-        <div id="riddle-cards" class="row mx-5 my-3 justify-content-center">
+        <div id="entries" class="row mx-5 my-3 justify-content-center">
 
         </div>
     </div>
