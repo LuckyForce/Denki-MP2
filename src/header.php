@@ -1,6 +1,35 @@
 <script>
     const site = '<?= $site ?>';
 </script>
+<script>
+    //Settings
+    const ConsentManager = {
+        title: "CleanUp Wien",
+        info_text: "This website uses cookies to ensure you get the best experience on our website. By using our website you agree to our use of cookies. <a href='<?= $site ?>agb'>Learn more</a>",
+        button_text: "Ich nehme das zur Kenntnis",
+        zIndex: 9999,
+        position: 17,
+        credit: false,
+        background_color: "rgba(0,0,0,0.5)",
+        text_color: "white",
+        consentInfoChangedOn: "2018-01-01",
+        // cover: "rgba(0,0,0,0.5)", // or just 0.5
+    };
+
+    //   const ConsentManager = {
+    //         title: "ConsentManager",
+    //         info_text: `This website uses cookies to ensure you get the best experience on our website. By using our website you agree to our use of cookies.
+    //         <a href="https://www.google.com/intl/en/policies/technologies/cookies/">Learn more</a>`,
+    //         button_text: "Accept",
+    //         text_color: "white",
+    //         credit: true,
+    //         position: 14,
+    //         cover: "rgba(0,0,0,0.5)", // or just 0.5
+    //         zIndex: 1111, // on standard 9999
+    //         consentInfoChangedOn: "2018-01-01",
+    //       };
+</script>
+<script type="module" src="<?= $site ?>js/consent-manager-v1.js"></script>
 <nav class="navbar bg-dark-grey navbar-expand-lg navbar-dark">
     <a id="homepage-icon" class="navbar-brand ms-3" href="<?= $site ?>">
         <!--<i class="fas fa-home fa-2x"></i>-->
@@ -14,7 +43,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
             <li class="nav-item ms-3">
-                <a id="riddles" class="nav-link purple" href="<?= $site ?>all">Alle Einmeldungung</a>
+                <a id="riddles" class="nav-link purple" href="<?= $site ?>all">Alle Einmeldungen</a>
             </li>
             <li class="nav-item ms-3">
                 <a id="logictable" class="nav-link purple" href="<?= $site ?>new">Neue Einmeldung</a>

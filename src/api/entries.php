@@ -1,5 +1,25 @@
 <?php
 header("Content-Type: application/json; charset=UTF-8");
+require '../config.php';
+$debug = $config['debug'];
+
+ini_set('display_errors', 1);
+
+try {
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    if($debug)
+        echo json_encode(getSampleEntries(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    else{
+        echo json_encode(getEntries($data), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    }
+    http_response_code(200);
+} catch (\Throwable $th) {
+    http_response_code(400);
+    echo json_encode(['error' => $th->getMessage()]);
+    exit;
+}
+
 
 function getSampleEntries() {
     return [
@@ -36,10 +56,19 @@ function getSampleEntries() {
     ];
 }
 
+//TODO: Check filter
+function getEntries($data) {
+    require 'dbconnect.php';
+    $sql = "SELECT * FROM tu_entry";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    return $result;
+}
+
 // Example usage
 // $entries = getSampleEntries();
 // foreach ($entries as $entry) {
 //     print_r($entry);
 // }
 
-echo json_encode(getSampleEntries(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);

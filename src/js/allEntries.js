@@ -65,11 +65,8 @@ async function getAllEntries() {
                 <p><strong>Standort:</strong> ${entry.place}</p>
                 <p><strong>Priorität:</strong> ${entry.priority}</p>
                 <p><strong>Gefahrenstufe:</strong> ${entry.danger}</p>
-                <p><strong>Bild:</strong> <img src="${site}api/uploads?pic=${
-            entry.picture
-          }" alt="${
-            entry.title
-          }" style="max-width: 200px; max-height: 200px;"></p>
+                <p><strong>Status:</strong> ${entry.status}</p>
+                <p><strong>Bild:</strong> <img src="${entry.picture_data}" alt="${entry.picture}" style="max-width: 400px; max-height: 400px;"></p>
               </div>
             `;
           entriesDiv.appendChild(entryDiv);

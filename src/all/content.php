@@ -19,7 +19,7 @@ Hier muss nur das Frontend drum herum gemacht werden-->
 <div class="bg-dark-purple">
 
     <div class="header-title">
-        <h1>Alle Einmeldungungen</h1>
+        <h1>Alle Einmeldungen</h1>
     </div>
 
     <div class="container ms-1">
