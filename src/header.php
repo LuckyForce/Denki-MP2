@@ -5,7 +5,7 @@
     //Settings
     const ConsentManager = {
         title: "CleanUp Wien",
-        info_text: "This website uses cookies to ensure you get the best experience on our website. By using our website you agree to our use of cookies. <a href='<?= $site ?>agb'>Learn more</a>",
+        info_text: "Diese Website verwendet mit Absicht keine Cookies. Durch die Nutzung unserer Website stimmen Sie unserer Verwendung von möglichen Datenverarbeitungen bestimmter Interaktionen zu. <a href='<?= $site ?>agb'>Mehr erfahren</a>",
         button_text: "Ich nehme das zur Kenntnis",
         zIndex: 9999,
         position: 17,

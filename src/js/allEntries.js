@@ -35,7 +35,12 @@ async function getAllEntries() {
   console.log("Get all entries");
 
   // Define the API endpoint
-  const apiEndpoint = site + "api/entries.php";
+  // Define the base API endpoint
+  const baseApiEndpoint = site + "api/entries.php";
+
+  // Append current query parameters to the API endpoint
+  const currentQueryParams = new URLSearchParams(window.location.search);
+  const apiEndpoint = `${baseApiEndpoint}?${currentQueryParams.toString()}`;
 
   try {
     // Fetch data from the API
@@ -71,6 +76,8 @@ async function getAllEntries() {
             `;
           entriesDiv.appendChild(entryDiv);
         });
+
+        entriesLoaded();
       } else {
         console.error("Invalid data format received from API:", data);
       }
@@ -80,4 +87,91 @@ async function getAllEntries() {
   } catch (error) {
     console.error("An error occurred while fetching entries:", error);
   }
+}
+
+document.getElementById("apply-filters").addEventListener("click", function () {
+  const searchText = document.getElementById("search-text").value;
+  const searchPlace = document.getElementById("search-place").value;
+  const priority = document.getElementById("priority").value;
+  const order = document.getElementById("order").value;
+
+  // Build query string
+  const params = new URLSearchParams(window.location.search);
+  if (searchText) {
+    params.set("searchText", searchText);
+  } else {
+    params.delete("searchText");
+  }
+
+  if (searchPlace) {
+    params.set("searchPlace", searchPlace);
+  } else {
+    params.delete("searchPlace");
+  }
+
+  if (priority && priority !== "All") {
+    params.set("priority", priority);
+  } else {
+    params.delete("priority");
+  }
+
+  if (order) {
+    params.set("order", order);
+  } else {
+    params.delete("order");
+  }
+
+  // Reload page with new query string
+  window.location.search = params.toString();
+});
+
+function entriesLoaded() {
+  const params = new URLSearchParams(window.location.search);
+
+  const searchText = params.get("searchText");
+  const searchPlace = params.get("searchPlace");
+  const priority = params.get("priority");
+  const order = params.get("order");
+
+  if (searchText) {
+    document.getElementById("search-text").value = searchText;
+  }
+
+  if (searchPlace) {
+    document.getElementById("search-place").value = searchPlace;
+  }
+
+  if (priority) {
+    document.getElementById("priority").value = priority;
+  }
+
+  if (order) {
+    document.getElementById("order").value = order;
+  }
+
+  // Load pagination dynamically (placeholder logic)
+  const paginationContainer = document.querySelector(".pagination");
+  const currentPage = parseInt(params.get("page") || 1);
+  const entriesAvailable =
+    document.getElementById("entries").children.length > 0;
+
+  for (let i = 1; i <= currentPage + (entriesAvailable ? 1 : 0); i++) {
+    const li = document.createElement("li");
+    li.className = "page-item" + (i === currentPage ? " active" : "");
+
+    const a = document.createElement("a");
+    a.className = "page-link";
+    a.textContent = i;
+    a.href = `?${updateQueryParam("page", i)}`;
+
+    li.appendChild(a);
+    paginationContainer.appendChild(li);
+  }
+}
+
+// Update query parameter helper
+function updateQueryParam(key, value) {
+  const params = new URLSearchParams(window.location.search);
+  params.set(key, value);
+  return params.toString();
 }

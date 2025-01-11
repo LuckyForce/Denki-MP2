@@ -62,6 +62,7 @@ Hier muss nur das Frontend drum herum gemacht werden-->
                             </select>
                         </div>
                     </div>
+                    <button type="button" id="apply-filters" class="btn btn-primary mt-3">Filter Anwenden</button>
                 </form>
             </div>
         </div>
@@ -71,5 +72,13 @@ Hier muss nur das Frontend drum herum gemacht werden-->
         <div id="entries" class="row mx-5 my-3 justify-content-center">
 
         </div>
+    </div>
+
+    <div class="pagination-container text-center mt-4">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <!-- Pagination buttons will be dynamically loaded here -->
+            </ul>
+        </nav>
     </div>
 </div>

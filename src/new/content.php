@@ -14,7 +14,7 @@ Per JavaScript wird dann entschieden was angezeigt wird.-->
         <div class="card text-center bg-dark-grey purple">
 
             <script src="<?= $site ?>js/newEntry.js" type="module"></script>
-            <form id="login-form" class="was-validated">
+            <form id="login-form" class="was-validated pb-5">
                 <div class="row justify-content-center">
                     <div class="form-group col-md-4 mt-5">
                         <label for="title">Titel:<b class="red-star">*</b></label>
@@ -79,10 +79,10 @@ Per JavaScript wird dann entschieden was angezeigt wird.-->
                     </div>
                 </div>
                 <div class="form-group">
-                    <button id="submit-button" class="btn col-4 mt-4 mb-5 btn-default" type="button">
+                    <button id="submit-button" class="btn col-4 mt-4 btn-default" type="button">
                         Abschicken
                     </button>
-                    <div id="information-bad">
+                    <div id="information-bad" style="display: block;" class="invalid-feedback">
 
                     </div>
                 </div>

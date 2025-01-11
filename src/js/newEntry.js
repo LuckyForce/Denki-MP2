@@ -16,14 +16,30 @@ async function submit() {
     priority: Number(document.getElementById("priority").value),
     danger: Number(document.getElementById("danger").value),
     picture: document.getElementById("picture").files[0]?.name,
-    picture_data:
-      (await toBase64(document.getElementById("picture").files[0])) + "",
+    picture_data: document.getElementById("picture").files[0] ? "" + (await toBase64(document.getElementById("picture").files[0])) + "" : null,
+    agb: document.getElementById("agb").checked,
   });
 }
 
 async function submitRequest(params) {
   console.log("Submit request");
   console.log(params);
+  //Validate Params
+  if (
+    !params.title ||
+    !params.description ||
+    !params.place ||
+    !params.priority ||
+    !params.danger ||
+    !params.picture ||
+    !params.picture_data ||
+    !params.agb
+  ) {
+    console.error("Missing required parameters");
+    document.getElementById("information-bad").innerText = "Bitte füllen Sie alle Felder aus.";
+    return;
+  }
+
   fetch(site + "api/entry.php", {
     body: JSON.stringify(params),
     method: "POST",
