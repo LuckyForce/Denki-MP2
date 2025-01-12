@@ -61,19 +61,40 @@ async function getAllEntries() {
         entriesDiv.innerHTML = ""; // Clear the current content
 
         // Iterate over the entries and render them
+        // data.forEach((entry) => {
+        //   const entryDiv = document.createElement("div");
+        //   entryDiv.innerHTML = `
+        //       <div class="entry-card">
+        //         <h2>${entry.title}</h2>
+        //         <p><strong>Beschreibung:</strong> ${entry.description}</p>
+        //         <p><strong>Standort:</strong> ${entry.place}</p>
+        //         <p><strong>Priorität:</strong> ${entry.priority}</p>
+        //         <p><strong>Gefahrenstufe:</strong> ${entry.danger}</p>
+        //         <p><strong>Status:</strong> ${entry.status}</p>
+        //         <p><strong>Bild:</strong> <img src="${entry.picture_data}" alt="${entry.picture}" style="max-width: 400px; max-height: 400px;"></p>
+        //       </div>
+        //     `;
+        //   entriesDiv.appendChild(entryDiv);
+        // });
+
         data.forEach((entry) => {
           const entryDiv = document.createElement("div");
+          entryDiv.classList.add("col-md-4", "mb-4"); // Bootstrap grid column and spacing classes
+        
           entryDiv.innerHTML = `
-              <div class="entry-card">
-                <h2>${entry.title}</h2>
-                <p><strong>Beschreibung:</strong> ${entry.description}</p>
-                <p><strong>Standort:</strong> ${entry.place}</p>
-                <p><strong>Priorität:</strong> ${entry.priority}</p>
-                <p><strong>Gefahrenstufe:</strong> ${entry.danger}</p>
-                <p><strong>Status:</strong> ${entry.status}</p>
-                <p><strong>Bild:</strong> <img src="${entry.picture_data}" alt="${entry.picture}" style="max-width: 400px; max-height: 400px;"></p>
+            <div class="card h-100">
+              <img src="${entry.picture_data}" class="card-img-top" alt="${entry.picture}" style="max-height: 300px; object-fit: cover;">
+              <div class="card-body">
+                <h5 class="card-title">${entry.title}</h5>
+                <p class="card-text"><strong>Beschreibung:</strong> ${entry.description}</p>
+                <p class="card-text"><strong>Standort:</strong> ${entry.place}</p>
+                <p class="card-text"><strong>Priorität:</strong> ${entry.priority}</p>
+                <p class="card-text"><strong>Gefahrenstufe:</strong> ${entry.danger}</p>
+                <p class="card-text"><strong>Status:</strong> ${entry.status}</p>
               </div>
-            `;
+            </div>
+          `;
+        
           entriesDiv.appendChild(entryDiv);
         });
 
