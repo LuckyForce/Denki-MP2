@@ -7,7 +7,11 @@ Hier muss nur das Frontend drum herum gemacht werden-->
         padding: 15px;
         margin: 10px 0;
         border-radius: 5px;
-        background-color: #f9f9f9;
+        /* background-color: #bd93f9 !important; */
+    }
+
+    .card {
+        background-color: #282a36 !important;
     }
 
     .entry-card img {
@@ -55,6 +59,17 @@ Hier muss nur das Frontend drum herum gemacht werden-->
                             </select>
                         </div>
                         <div class="form-group col-md-3 mb-3 mt-1">
+                            <label for="priority">Gefahrenstufe:</label>
+                            <select class="form-select" id="danger">
+                                <option selected value="All">Alle</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3 mb-3 mt-1">
                             <label for="order">Sortiere nach Datum:</label>
                             <select class="form-select" id="order">
                                 <option value="desc">desc</option>
@@ -69,8 +84,8 @@ Hier muss nur das Frontend drum herum gemacht werden-->
     </div>
 
     <div class="p-1">
-        <div id="entries" class="row mx-5 my-3 justify-content-center">
-
+        <div id="entries" class="row mx-5 my-3 justify-content-center text-main bg-dark-purple">
+            <!-- Entry cards will be dynamically loaded here -->
         </div>
     </div>
 

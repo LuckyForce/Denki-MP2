@@ -94,6 +94,11 @@ function getEntries($data)
         $params[':priority'] = $data['priority'];
     }
 
+    if (!empty($data['danger']) && $data['danger'] !== 'All') {
+        $sql .= " AND danger = :danger";
+        $params[':danger'] = $data['danger'];
+    }
+
     if (!empty($data['order']) && in_array(strtolower($data['order']), ['asc', 'desc'])) {
         $sql .= " ORDER BY created_at " . strtoupper($data['order']);
     } else {

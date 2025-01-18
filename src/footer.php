@@ -19,7 +19,7 @@ $email = "info@adrian-schauer.at";
             <br>
         </div>
         <div class="col centralizer">
-            <p>&copy; 2024 TU Wien<br>MP 2</p>
+            <p>&copy; 2025 TU Wien<br>MP 2</p>
             <p>AGB:<br><a href="<?= $site ?>agb" class="purple"><?= $site ?>agb</a></p>
         </div>
     </div>
