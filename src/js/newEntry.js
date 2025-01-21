@@ -16,7 +16,9 @@ async function submit() {
     priority: Number(document.getElementById("priority").value),
     danger: Number(document.getElementById("danger").value),
     picture: document.getElementById("picture").files[0]?.name,
-    picture_data: document.getElementById("picture").files[0] ? "" + (await toBase64(document.getElementById("picture").files[0])) + "" : null,
+    picture_data: document.getElementById("picture").files[0]
+      ? "" + (await toBase64(document.getElementById("picture").files[0])) + ""
+      : null,
     agb: document.getElementById("agb").checked,
   });
 }
@@ -36,7 +38,8 @@ async function submitRequest(params) {
     !params.agb
   ) {
     console.error("Missing required parameters");
-    document.getElementById("information-bad").innerText = "Bitte füllen Sie alle Felder aus.";
+    document.getElementById("information-bad").innerText =
+      "Bitte füllen Sie alle Felder aus.";
     return;
   }
 
@@ -47,6 +50,9 @@ async function submitRequest(params) {
   }).then((response) => {
     if (response.status === 201) {
       console.log("Entry created successfully");
+
+      //Redirect to all entries with title filter
+      window.location.href = site + "all?searchText=" + params.title;
     } else {
       console.error("Failed to create entry");
       console.error(response);
